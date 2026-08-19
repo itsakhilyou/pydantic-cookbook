@@ -1,0 +1,17 @@
+# Cookbook dependencies. Install with:  pip install -r requirements.txt
+# (or:  uv pip install -r requirements.txt)
+
+# Pydantic AI core (provides Agent, model strings like openrouter:...).
+pydantic-ai>=2.28
+
+# Pydantic AI Harness with the You.com extra (YouSearch, YouResearch, SubAgents).
+# The You.com capabilities ship in the `youdotcom` extra (v0.25+, on PyPI).
+pydantic-ai-harness[youdotcom]>=0.25
+
+# Loads .env so the scripts run without manual exports.
+python-dotenv>=1.0
+
+# Pydantic Logfire observability. `logfire.instrument_pydantic_ai()` records
+# every agent run, model call, tool call, and retry as a trace in Logfire.
+# The `[system-metrics]` extra adds CPU/memory/disk/process metrics.
+logfire[system-metrics]>=4.0
